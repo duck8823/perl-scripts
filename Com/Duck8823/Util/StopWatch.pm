@@ -3,7 +3,8 @@ package Com::Duck8823::Util::StopWatch;
 use strict;
 use warnings;
 
-use Exporter 'import';
+use Exporter;
+our @ISA = qw(Exporter);
 our @EXPORT = qw(new start stop clear get_time);
 
 use Time::HiRes qw(gettimeofday tv_interval);
