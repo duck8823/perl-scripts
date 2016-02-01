@@ -7,8 +7,17 @@ use Spreadsheet::XLSX;
 
 use Getopt::Std;
 
-our ($opt_s, $opt_l, $opt_d);
-getopts("s:ld:");
+our ($opt_s, $opt_l, $opt_d, $opt_h);
+getopts("s:ld:h");
+if($opt_h){
+  print "Usage : perl cat_excel.pl [option] <FILE>\n";
+  print "Options\n"
+  print "-l:  シート名リストを表示する.\n;"
+  print "-s:  シート名を指定する.\n";
+  print "-d:  セパレータを指定する.(デフォルト: tab)\n"
+  exit(-1);
+}
+
 $opt_d = "\t" unless($opt_d);
 
 unless($ARGV[0]){
