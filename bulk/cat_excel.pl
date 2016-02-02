@@ -47,8 +47,9 @@ if($opt_s){
   &cat_sheet($sheets[$index]);
 } else {
   while( my $sheet = shift @sheets){
-    printf("Sheet: %s\n", $sheet->{Name});
+    printf("==> %s <==\n", $sheet->{Name});
     &cat_sheet($sheet);
+    print "\n";
   }
 }
 
